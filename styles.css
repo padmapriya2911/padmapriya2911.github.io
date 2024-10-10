@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica', sans-serif;
+    background-image: url('/Users/goks/Downloads/paypal-black.jpg'); /* Sophisticated background image */
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Make the background static */
+    background-position: center;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+}
+
+.header-title {
+    margin-bottom: 20px;
+    color: black; /* Changed heading font color to black */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.nav-items {
+    display: flex;
+    gap: 15px; /* Increased gap for better spacing */
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #0070ba;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.logout {
+    position: absolute; /* Positioned outside the menu */
+    right: -190px; /* Adjust the distance from the right */
+    top: 20px; /* Adjust the distance from the top */
+}
+
+.logout button {
+    background: #ff4757; /* Different color for logout button */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white for better visibility */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    margin: 10px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #0070ba;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.message {
+    color: green;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Container to align input and dropdown */
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add space between the amount input and currency dropdown */
+}
+
+/* Style the amount input */
+.input-group input {
+    flex-grow: 1; /* Make the input take the remaining space */
+    padding: 10px;
+    height: 40px; /* Set a fixed height */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the currency dropdown */
+.input-group select {
+    padding: 10px;
+    height: 40px; /* Same height as input */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: auto; /* Width adjusts to fit dropdown values */
+    min-width: 75px; /* Ensures it doesn't get too small */
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paypal Lite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1 class="header-title"><i class="fas fa-wallet"></i> Paypal Lite</h1>
+        <nav id="navButtons" class="hidden">
+            <div class="nav-items">
+                <button onclick="showSection('addMoney')"><i class="fas fa-plus"></i> Add Money</button>
+                <button onclick="showSection('sendReceive')"><i class="fas fa-exchange-alt"></i> Send Money</button>
+                <button onclick="showSection('transactionHistory')"><i class="fas fa-history"></i> Transaction History</button>
+                <button onclick="showSection('balanceCheck')"><i class="fas fa-money-bill-wave"></i> Balance Check</button>
+            </div>
+        </nav>
+        <div class="logout">
+            <button onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="loginSection" class="form-container">
+            <h2>Login</h2>
+            <input type="text" id="loginMobile" placeholder="Mobile Number" />
+            <input type="password" id="loginPassword" placeholder="Password" />
+            <button onclick="login()">Login</button>
+        </section>
+
+        <!-- Add Money Section -->
+<!-- Add Money Section -->
+<section id="addMoney" class="form-container hidden">
+    <h2><i class="fas fa-plus"></i> Add Money</h2>
+    <div class="input-group">
+        <input type="number" id="addAmount" placeholder="Amount" />
+        <select id="addCurrency">
+            <option value="USD">USD</option>
+            <option value="CAD">CAD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="INR">INR</option>
+            <option value="JPY">JPY</option>
+        </select>
+    </div>
+    <button onclick="addMoney()">Add Money</button>
+    <p id="addMessage" class="message"></p>
+</section>
+
+<!-- Send Money Section -->
+<section id="sendReceive" class="form-container hidden">
+    <h2><i class="fas fa-exchange-alt"></i> Send/Receive Money</h2>
+    <input type="text" id="recipient" placeholder="Recipient Username" />
+    <div class="input-group">
+        <input type="number" id="sendAmount" placeholder="Amount" />
+        <select id="sendCurrency">
+            <option value="USD">USD</option>
+            <option value="CAD">CAD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="INR">INR</option>
+            <option value="JPY">JPY</option>
+        </select>
+    </div>
+    <button onclick="sendMoney()">Send Money</button>
+    <p id="sendMessage" class="message"></p>
+</section>
+
+
+        <section id="transactionHistory" class="form-container hidden">
+            <h2><i class="fas fa-history"></i> Transaction History</h2>
+            <ul id="historyList"></ul>
+            <button onclick="getTransactionHistory()">Load History</button>
+        </section>
+
+        <section id="balanceCheck" class="form-container hidden">
+            <h2><i class="fas fa-money-bill-wave"></i> Check Balance</h2>
+            <button onclick="checkBalance()">View Balance</button>
+            <p id="balanceDisplay" class="message"></p>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
